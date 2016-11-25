@@ -1,0 +1,49 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
+            font-size: 100%;
+        }
+        
+        body {
+            background: #fff;
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+
+        a:link, a:visited {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #12b7f5;
+        }
+
+        img {
+            border: none;
+        }
+
+        s, i, em {
+            font-style: normal;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: normal;
+        }
+
+        .clearfix:after {
+            content: "";        /*添加内容为空*/
+            height: 0;      /*内容高度为0*/
+            line-height: 0;     /*内容文本的高度为0*/
+            display: block;     /*将文本设置为块级元素*/
+            clear: both;        /*清除浮动*/
+            visibility: hidden; /*将元素隐藏*/
+        }
+
+        .clearfix {
+            zoom: 1;/*为了兼容ie6*/
+        }
+

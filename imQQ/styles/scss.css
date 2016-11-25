@@ -1,0 +1,444 @@
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.tac {
+	text-align: center;
+}
+
+.tar {
+	text-align: right;
+}
+
+header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 150px;
+	/*background: transparent url(../images/lineartop.png) repeat-x center top;*/
+	z-index: 900;
+}
+
+.topbar {
+	max-width: 1170px;
+	min-width: 980px;
+	width: 80%;
+	height: 75px;
+	margin: 0 auto;
+	/*background: #cbd16f;*/
+}
+
+.topicfixed {
+	height: 75px;
+}
+
+.topicfixed {
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: #fff;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.topicfixed a:link, .topicfixed a:visited {
+	color: #333;
+}
+
+.topside {
+	width: 59%;
+}
+
+.logolink {
+	display: inline-block;
+	width: 106px;
+	height: 0px;
+	overflow: hidden;
+	padding-top: 76px;
+	font-size: 0;
+	background: transparent url(../images/imlogo.png)  left 15px no-repeat;
+}
+
+.topnav {
+	width: 450px;
+  	padding-left: 18px;
+}
+
+.topnav li {
+	float: left;
+
+}
+
+.topnav li:hover {
+	background-color: #12b7f5;
+}
+
+.topnav li a {
+	line-height: 75px;
+	padding: 0 20px;
+	font-size: 1.125em;
+}
+
+.topnav li a:link,
+.topnav li a:visited {
+	color: #fff;
+}
+
+.toptools {
+	width: 320px;
+	height: 63px;
+	font-size: 14px;
+}
+
+.toptools ul {
+	height: 40px;
+	padding-top: 6px;
+
+}
+
+.barzc {
+	width: 96px;
+	height: 0;
+	overflow: hidden;
+	padding-top: 39px;
+	margin-top: 18px;
+	line-height: 39px;
+	font-size: 0;
+	background: transparent url(../images/icons.png) no-repeat 0 -244px;
+}
+
+.toptools li {
+	float: right;
+	margin-left: 30px;
+	position: relative;
+	line-height: 40px;
+}
+
+.toptools li a {
+	color: #fff;
+}
+
+.toptools li a:hover {
+	color: #12b7f5;
+}
+
+.onlinepeople {
+	line-height: 17px;
+	letter-spacing: 0.04em;
+	color: #fff;
+}
+/*header结束*/
+/*banner开始*/
+.banner {
+	height: 560px;
+	width: 100%;
+	/*border: 1px solid #000;*/
+	position: relative;
+}
+/*----------图片切换部分开始----------*/
+/*定位按钮位置*/
+.banner span,
+.banner input {
+	position: absolute;
+	bottom: 37px;
+}
+/*定义按钮样式*/
+.banner span {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+}
+/*input覆盖于span之上，并且透明*/
+.banner input {
+	z-index: 10;
+	cursor: pointer;
+	opacity: 0;
+}
+/*定位*/
+.inputbtn1 {
+	left: 49%;
+}
+
+.inputbtn2 {
+	left: 51%;
+}
+
+.tabbtn1 {
+	left: 49%;
+}
+
+.tabbtn2 {
+	left: 51%;
+}
+/*当input选中时，span背景颜色改变*/
+.inputbtn1:checked ~ .tabbtn1 {
+	background-color: #fff;
+}
+
+.inputbtn2:checked ~ .tabbtn2 {
+	background-color: #fff;
+}
+/*当input选中时，切换图片*/
+.inputbtn1:checked ~ .tabimg1 {
+	display: block;
+}
+
+.inputbtn2:checked ~ .tabimg2 {
+	display: block;
+}
+/*背景图样式，并且隐藏*/
+.tabimg1 {
+	display: none;
+	height: 560px;
+	background: url(../images/pc_87_s.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+ .tabimg2 {
+ 	display: none;
+	height: 560px;
+	background: url(../images/mb655_s.jpg) no-repeat center center;
+	background-size: cover;
+ }
+
+.tabdown1 {
+	display: none;
+	position: absolute;
+	bottom: 80px;
+	left: 265px;
+	width: 473px;
+	height: 75px;
+	z-index: 10;
+	overflow: hidden;
+}
+
+.tabdown2 {
+	display: none;
+	position: absolute;
+	bottom: 105px;
+	left: 325px;
+	width: 473px;
+	height: 90px;
+	z-index: 10;
+	overflow: hidden;
+}
+
+.inputbtn1:checked ~ .tabdown1 {
+	display: block;
+}
+
+.inputbtn2:checked ~ .tabdown2 {
+	display: block;
+}
+/*----------图片切换部分结束----------*/
+/*banner结束*/
+/*bg1开始*/
+body, html, .bg1 {
+ /* important */
+ height: 100%;
+}
+/*----------视差滚动样式开始----------*/
+
+/*第一屏背景图片fixed*/
+.bg {
+	width: 100%;
+	position: relative;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+}
+
+.bgtop {
+	width: 100%;
+	height: 0px;
+	overflow: hidden;
+	padding-top: 280px;
+}
+
+.bgbottom {
+	position: absolute;	
+	width: 100%;
+}
+
+.bg960 {
+	position: relative;
+	width: 960px;
+	height: 584px;
+	margin: 0 auto;
+}
+/*第一屏上部图片内容*/
+.bg1 {
+	height: 1464px;	/*设置足够的高度，撑起来内容*/
+	background-image:  url(../images/bg1_1600.jpg);
+}
+
+.bg1top {
+	/*width: 100%;
+	height: 0px;
+	overflow: hidden;
+	padding-top: 280px;*/
+	background: #fff  url(../images/brand.png) no-repeat center top;
+}
+/*第一屏下部图片内容*/
+.bg1bottom {	
+	bottom: 0;	/*绝对定位，定位到第一屏底部*/
+	left: 0;
+	background: #fff;
+	vertical-align: bottom;
+}
+
+.qcall1 {
+	position: absolute;
+	left: -32px;
+	bottom: 0;
+	width: 664px;
+	height: 763px;
+	background: transparent url(../images/pic1.png) no-repeat;
+}
+
+.txtwrap1 {
+	position: absolute;
+	right: 7px;
+	top: 115px;
+	width: 487px;
+	padding-top: 135px;
+    	background: transparent url(../images/qcall_txt.png) no-repeat 0 0;
+}
+/*第一屏结束*/
+/*第二屏开始*/
+.bg2 {
+	height: 1000px;
+	background-image:  url(../images/avds.jpg);
+}
+
+.bg2bottom {
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+}
+
+.qcall2 {
+	position: absolute;
+	right: -100px;
+	bottom: 104px;
+	width: 597px;
+	height: 330px;
+	background: transparent url(../images/pic2.png) no-repeat;
+}
+
+.txtwrap2 {
+	position: absolute;
+	left: 7px;
+	top: 115px;
+	width: 450px;
+	height: 360px;
+	background: transparent url(../images/txt.png) no-repeat;
+}
+/*第二屏结束*/
+/*第三屏开始*/
+.bg3 {
+	height: 1000px;
+	background-image:  url(../images/bg3_1600.jpg);
+}
+
+.bg3bottom {
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+}
+
+.qcall3 {
+	position: absolute;
+	left: 88px;
+	bottom: 0;
+	width: 344px;
+	height: 506px;
+	background: transparent url(../images/pic3.png) no-repeat;
+}
+
+.txtwrap3 {
+	position: absolute;
+	right: 7px;
+	top: 120px;
+	width: 495px;
+	height: 355px;
+	background: transparent url(../images/qblog_txt.png) no-repeat;
+}
+
+
+/*footer开始*/
+footer {
+	width: 100%;
+	height: 348px;
+	padding-top: 34px;
+	background: #2a2a2a;
+	font-size: 0.75em;
+}
+
+.plats h3 {
+	height: 50px;
+	color: #666;
+	font-size: 14px;
+}
+
+.plats a.plmb {
+	width: 68px;
+	margin-right: 35px;
+	background-position: 0px 0;
+}
+
+.plats a {
+	float: left;
+	padding-top: 65px;
+	background: transparent url(../images/plats1.png) no-repeat 0 0;
+	text-align: center;
+	font-size: 14px;
+}
+
+
+footer .plats a:link,
+footer .plats a:visited {
+    color: #979797;
+}
+
+.plats a.plpc {
+	width: 80px;
+	margin-right: 30px;
+	background-position: -105px 0;
+}
+
+.plats a.plmac {
+	width: 84px;
+	margin-right: 30px;
+	background-position: -210px 0;
+}
+
+.plats a.plpad {
+	width: 76px;
+	background-position: -326px 0;
+}
+
+.qmaps {
+	width: 960px;
+	height: 205px;
+	margin: 0 auto;
+}
+
+.copyright {
+	clear: both;
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 16px;
+	border-top: 1px solid #666;
+	line-height: 17px;
+	text-align: center;
+	color: #666;
+}
