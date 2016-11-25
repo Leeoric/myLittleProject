@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>迅雷-领先的众筹云计算服务商</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/zm_header.css">
+    <link rel="stylesheet" href="css/zm_footer.css">
+    <link rel="stylesheet" href="css/zm_index.css">
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/eventUtil.js"></script>
+    <script src="js/zm_animate.js"></script>
+    <script src="js/zhangmeng.js"></script>
+</head>
+<body>
+<!--header start-->
+<div class="header">
+    <!-- logo-->
+    <h1 class="logo png"><a href="#" title="迅雷网络"><img src="images/n_logo.png" class="png"></a></h1>
+    <!-- 头部导航栏 start-->
+    <ul class="nav_list">
+        <li class="nav_li">
+            <a href="#" class="btn_nav">
+                <i class="ic_product png" target="_blank"></i>产品
+            </a>
+        </li>
+        <li class="nav_li">
+            <a href="#" class="btn_nav">
+                <i class="ic_new png"></i>新闻
+            </a>
+        </li>
+        <li class="nav_li">
+            <a href="javascript:;" class="btn_nav" id="nav_more">
+                <i class="ic_more png"></i>更多
+            </a>
+            <!-- 侧边导航栏 start-->
+            <div class="more_nav" id="more_nav">
+                <i class="ic_bdot png" id="h_bdot"></i>
+                <ul id="h_nav">
+                    <li>
+                        <a href="#" target="_blank" class="btn_snav">星域CDN</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn_snav">人力资源</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn_snav">投资关系</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn_snav">关于迅雷</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn_snav">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 侧边导航栏 end-->
+        </li>
+    </ul>
+    <!-- 头部导航栏 end-->
+</div>
+<!--header end-->
+
+<!--主体部分 start-->
+<div class="wrap css3" id="wrap">
+    <div class="wrapper">
+        <div class="product_list" id="product_list">
+            <!-- 背景图1-->
+            <div class="product_box xnet" style="opacity: 1; z-index: 1">
+                <div class="bg_box">
+                    <img src="images/bg_xnet.jpg">
+                    <!--<canvas id="fireworks" width="1296" height="729"-->
+                            <!--style="margin-top: -364.5px; margin-left: -648px;">-->
+                    <!--</canvas>-->
+                </div>
+                <!-- 中部动画效果显示区1 start-->
+                <div class="content">
+                    <div class="main_box">
+                        <h2 class="hide_txt png">
+                            精彩，一下就有
+                        </h2>
+                        <a href="#" class="btn_product btn_left" title="PC迅雷">PC迅雷</a>
+                        <a href="#" class="btn_product btn_right" title="移动迅雷">移动迅雷</a>
+                    </div>
+                </div>
+                <!-- 中部动画效果显示区1 end-->
+            </div>
+            <!-- 背景图2-->
+            <div class="product_box member" style="opacity: 1; z-index: 0">
+                <div class="bg_box">
+                    <img src="images/bg_member.jpg">
+                </div>
+                <div class="content">
+                    <div class="main_box">
+                        <h2 class="hide_txt png">
+                            只为打造品质生活
+                        </h2>
+                        <a href="#" class="btn_product" title="迅雷会员">迅雷会员</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 背景图3-->
+            <div class="product_box xav" style="opacity: 1; z-index: 0">
+                <div class="bg_box">
+                    <img src="images/bg_xav.jpg">
+                </div>
+                <div class="content">
+                    <div class="main_box">
+                        <h2 class="hide_txt png">
+                            震撼视界，为你而FUN
+                        </h2>
+                        <a href="#" class="btn_product" title="迅雷影音">迅雷影音</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部产品盒子 start-->
+        <div class="product_btns" id="product_btns">
+            <div class="content">
+                <div class="btns_area">
+                    <div class="btns_box" id="control_box">
+                        <a class="btn_xnet9 cur" id="btn_xnet9" title="点击下载">
+                            <span class="ic_xnet9 hide_txt png">点击下载</span>
+                        </a>
+                        <a href="#" class="btn_member" id="btn_member" title="进入官网">
+                            <span class="ic_member hide_txt png">进入官网</span>
+                        </a>
+                        <a class="btn_xav" id="btn_xav" title="点击下载">
+                            <span class="ic_xav hide_txt png">点击下载</span>
+                        </a>
+                        <span class="ic_line" id="ic_line" style="left: 0px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部产品盒子 end-->
+
+        <!--浮层二维码 start-->
+        <div class="download_wp xnet_download" id="xnet_download">
+            <i class="opc_bg"></i>
+
+            <div class="content">
+                <i class="ic_arr"></i>
+
+                <div class="download_box">
+                    <a href="javascript:;" class='btn_download'>
+                        <span class='ic_download ic_mac'></span>
+                        Mac下载
+                    </a>
+                    <a href="#" class='btn_download'>
+                        <span class='ic_download ic_win'></span>
+                        Win下载
+                    </a>
+                    <a class="btn_download">
+                        <span class="ic_download ic_android"></span>
+                        Android下载
+                        <img src="images/201511201257341349.png" class="img_code">
+                    </a>
+                    <a class="btn_download">
+                        <span class="ic_download ic_ios"></span>
+                        iPhone下载
+                        <img src="images/201610191035121708.png" class="img_code">
+                    </a>
+                    <a class="btn_download">
+                        <span class="ic_download ic_ipad"></span>
+                        iPad下载
+                        <img src="images/201610191036048853.png" class="img_code">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="download_wp xav_download" id="xav_download">
+            <i class="opc_bg"></i>
+
+            <div class="content">
+                <i class="ic_arr"></i>
+
+                <div class="download_box">
+                    <a href="javascript:;" class='btn_download'>
+                        <span class='ic_download ic_win'></span>
+                        Win下载
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 浮层二维码 end-->
+        <div class="rpt_bg png" id="rpt_bg"></div>
+    </div>
+</div>
+<!--主体部分 start-->
+
+<!--footer start-->
+<div class="footer f_color2" id="footer">
+    <div class="foot">
+        <p class="links">
+            <a href="#">增值电信业务粤B2-20050219号</a>
+            <span>|</span>
+            <a href="#">粤网文[2016]0901-125号</a>
+            <span>|</span>
+            <a href="#">互联网出版(粤)字053号</a>
+            <span>|</span>
+            <a href="#">互联网药品证书</a>
+        </p>
+        <p>迅雷会员专属客服热线:400-1111-000 违法信息举报电话:0755-86319951 举报邮箱xljubao@xunlei.com Copyright © 2003-2016 XUNLEI.COM AllRights Reserved</p>
+        <div class="safe_links">
+            <a href="#"><img src="images/safe_1.png">深圳网络警察报警平台</a>
+            <a href="#"><img src="images/safe_2.png">公共信息安全网络监察</a>
+            <a href="#"><img src="images/safe_3.png">经营性网站备案信息</a>
+            <a href="#"><img src="images/safe_4.png">不良信息举报中心</a>
+        </div>
+    </div>
+</div>
+<!--footer end-->
+</body>
+</html>

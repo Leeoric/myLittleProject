@@ -1,0 +1,688 @@
+@charset "UTF-8";
+/*设置默认编码集*/
+
+/*css 初始化 start------------------------*/
+html {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    font: 12px/1.5 tahoma, arial, \5FAE\8F6F\96C5\9ED1, sans-serif;
+    font-family: "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
+    background: #000;
+}
+
+body, div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, p, table, input {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+table {
+    width: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+li {
+    list-style: none;
+    vertical-align: bottom;
+}
+
+em, i {
+    font-style: normal;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    transition: color .3s, opacity .3s, transform .3s;
+}
+
+a:hover {
+    outline: none;
+    text-decoration: underline;
+}
+
+img {
+    border: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.hide_txt {
+    text-indent: -9999em;
+    font-size: 0;
+    line-height: 0;
+}
+
+/*清除浮动*/
+.clearfix:after {
+    display: block;
+    content: "";
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/*css 初始化 end--------------------------*/
+
+/*主体部分 start--------------------------*/
+.wrap {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.product_list {
+    position: relative;
+    height: 100%;
+}
+
+.product_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    /*left: -9999px;*/
+    left: 0;
+}
+
+.product_list .show {
+    /*left: 0;*/
+}
+
+/*背景图盒子*/
+.bg_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: transform 15s linear;
+    background: #000;
+}
+
+/*轮播背景图*/
+.bg_box img {
+    position: absolute;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    width: 1366px;
+    height: 768px;
+    /*test---------*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/*动画效果展示区域 start----------------------*/
+.product_box .content {
+    width: 1000px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;;
+    z-index: 15;
+    transform-origin: center center;
+}
+
+.product_box .main_box {
+    position: relative;
+    height: 100%;
+    /*left: -9999px;*/
+    left: 0;
+}
+
+.product_list .show .main_box {
+    /*left: 0;*/
+}
+
+.product_box h2 {
+    position: absolute;
+    background-size: 100% 100%;
+}
+
+.product_box h2 span {
+    position: absolute;
+}
+/*动画效果展示区域 end----------------------*/
+
+/*主体部分浮现文字框 start--------------*/
+.btn_product {
+    position: absolute;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.product_list .btn_product:hover {
+    text-decoration: none;
+    color: #000
+}
+
+/*主体部分浮现文字框 遮罩动画*/
+/*结构加载时逆时针绕z轴旋转45度 向上移动三个单位*/
+.btn_product:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    margin-left: -1px;
+    width: 150%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 1);
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s;
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform-origin: 0% 100%; /*以左下角为旋转基点*/
+}
+
+/*主体部分浮现文字框 启动遮罩动画*/
+.btn_product:hover:before {
+    opacity: .6;
+    width: 100%;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+
+.xnet .btn_product {
+    border-color: #999;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.member .btn_product {
+    border-color: #999;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.xav .btn_product {
+    border-color: #999;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+/*主体部分浮现文字框 end-----------------*/
+
+/*背景图动画效果 start-------------------*/
+.product_box.show .bg_box {
+    transform: scale(1.1);
+}
+
+/*背景盒子亮度*/
+.show.xnet .bg_box {
+    animation: brightness 2s linear both infinite;
+}
+/*背景图亮度*/
+.show.xnet .bg_box img {
+    animation: brightness2 2s linear both infinite;
+}
+
+/*亮度动画 设置关键帧*/
+@keyframes brightness2 {
+    0% {
+        filter: brightness(1)
+    }
+    50% {
+        filter: brightness(1.2)
+    }
+    100% {
+        filter: brightness(1)
+    }
+}
+/*背景图动画效果 end------------------*/
+
+/*主体部分底部产品盒子 start-------------------*/
+.product_btns {
+    position: absolute;
+    width: 100%;
+    bottom: 90px;
+    transition: bottom .3s;
+    z-index: 10;
+}
+
+.product_btns.show {
+    bottom: 116px;
+}
+
+.product_btns.down {
+    bottom: 110px;
+}
+
+.product_btns .content {
+    width: 1000px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.product_btns .btns_area {
+    margin: 0 auto;
+    border-bottom: 3px solid #92a0b4;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.product_btns .btns_box {
+    position: absolute;
+    width: 100%;
+    height: 84px;
+    top: 3px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.product_btns .btns_box a {
+    display: inline-block;
+    position: relative;
+}
+
+.product_btns .btns_box a span {
+    display: block;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+/*产品盒子底部指示器*/
+.product_btns .ic_line {
+    position: absolute;
+    height: 3px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+}
+/*主体部分底部产品盒子 end---------------------*/
+
+/*底部透明度背景图 阴影效果*/
+.rpt_bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 238px;
+    background: url("../images/rpt_bg.png") repeat-x;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 5;
+    left: -9999px;
+}
+
+.rpt_bg.show {
+    opacity: 1;
+    left: 0;
+}
+
+.download_wp {
+    position: absolute;
+    width: 100%;
+    height: 105px;
+    bottom: -160px;
+    left: 0;
+    z-index: 10;
+    transition: bottom .3s;
+}
+
+.download_wp.show {
+    bottom: 0;
+}
+
+.download_wp .content {
+    width: 1000px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 140px;
+}
+
+/*底部下载栏的透明度背景图*/
+.download_wp .opc_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .1;
+}
+
+/*小三角指示器 设置border样式实现 start-----*/
+.download_wp .ic_arr {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-width: 16px 10px;
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent #fff transparent;
+    opacity: .1;
+}
+
+.xnet_download .ic_arr {
+    margin-left: -110px;
+}
+
+.xav_download .ic_arr {
+    margin-left: 90px;
+}
+/*小三角指示器 设置border样式实现 end-----*/
+
+.download_box {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.download_box a {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    margin: 0 25px;
+    padding-top: 60px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+    font-weight: lighter;
+    white-space: nowrap;
+}
+
+.download_box a:hover {
+    text-decoration: none;
+}
+
+.download_box .ic_download {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    height: 42px;
+    background-image: url("../images/ic_download.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/*net下载盒子项目 start--------------*/
+.download_box .ic_mac {
+    background-position: 0 0;
+    width: 35px;
+    margin-left: -17px;
+}
+
+.download_box .ic_win {
+    background-position: -64px 0;
+    width: 39px;
+    margin-left: -20px;
+}
+
+.download_box .ic_android {
+    background-position: -140px 0;
+    width: 43px;
+    margin-left: -21px;
+}
+
+.download_box .ic_ios {
+    background-position: -220px 0;
+    width: 25px;
+    margin-left: -12px;
+}
+
+.download_box .ic_ipad {
+    background-position: -280px 0;
+    width: 29px;
+    margin-left: -14px;
+}
+
+.download_box .img_code {
+    position: absolute;
+    width: 152px;
+    height: 157px;
+    bottom: 100%;
+    left: -9999px;
+    margin-left: -76px;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+/*显示二维码*/
+.download_box a:hover .img_code {
+    left: 50%;
+    opacity: 1;
+}
+/*net下载盒子项目 end--------------*/
+
+.xav_download .download_box a {
+    left: 100px;
+}
+
+.btn_product {
+    width: 164px;
+    height: 52px;
+    line-height: 52px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 18px;
+    display: none;
+}
+
+/*精彩一下就有 start-------------*/
+.xnet h2 {
+    width: 493px;
+    height: 56px;
+    /*display: none;*/
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -10px;
+    top: -45px;
+    opacity: 0;
+    background-image: url("../images/txt_1.png");
+}
+
+.xnet .btn_product {
+    width: 148px;
+    height: 46px;
+    line-height: 46px;
+    margin-top: 85px;
+    left: 50%;
+}
+
+.xnet .btn_left {
+    margin-left: -172px;
+}
+
+.xnet .btn_right {
+    margin-left: 24px;
+}
+/*精彩一下就有 end-----------------*/
+
+/*只为打造品质生活 start------------*/
+.member h2 {
+    width: 679px;
+    height: 66px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 180px;
+    top: -45px;
+    opacity: 0;
+    background-image: url("../images/txt_2.png");
+}
+
+.member .btn_product {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+/*只为打造品质生活 end---------------*/
+
+/*震撼视界 start-------------------*/
+.xav h2 {
+    width: 673px;
+    height: 61px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -45px;
+    opacity: 0;
+    margin-top: 260px;
+    background-image: url("../images/txt_3.png");
+}
+
+.xav .btn_product {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-top: 355px;
+}
+
+/*震撼视界 end-------------------*/
+
+/*主体部分底部产品盒子 start------*/
+.product_btns .btns_area {
+    width: 272px;
+    height: 84px;
+}
+
+.product_btns .btns_box a {
+    width: 70px;
+    height: 84px;
+    margin: 0 15px;
+}
+
+.product_btns .btns_box a span {
+    height: 68px;
+    background-image: url("../images/ic_spr.png");
+}
+
+.product_btns .ic_line {
+    width: 70px;
+}
+
+.product_btns .btns_box .btn_xnet9 {
+    margin: 0 15px 0 0;
+}
+
+.product_btns .btns_box .btn_xav {
+    margin: 0 0 0 15px;
+}
+
+.ic_xnet {
+    background-position: -106px 0;
+    width: 65px;
+    margin-left: -32px;
+}
+
+a:hover .ic_xnet, a.cur .ic_xnet {
+    background-position: -106px -108px;
+}
+
+.ic_member {
+    background-position: -224px 0;
+    width: 48px;
+    margin-left: -24px;
+}
+
+a:hover .ic_member, a.cur .ic_member {
+    background-position: -224px -108px;
+}
+
+.ic_xav {
+    background-position: -406px 0;
+    width: 55px;
+    margin-left: -27px;
+}
+
+a:hover .ic_xav, a.cur .ic_xav {
+    background-position: -406px -108px;
+}
+
+.ic_xnet9 {
+    background-position: -606px 0;
+    width: 61px;
+    margin-left: -30px;
+}
+
+a:hover .ic_xnet9, a.cur .ic_xnet9 {
+    background-position: -606px -108px;
+}
+/*主体部分底部产品盒子 end------*/
+/*主体部分 start--------------------------*/
+
+/*页面适配 通过媒体查询改变主体部分三块主要区域缩放比例*/
+@media only screen and (min-width: 1366px) and (max-width: 1439px) {
+    .product_list .content, .product_btns .content, .download_wp .content {
+        transform: scale(0.75, 0.75);
+    }
+
+    .download_wp {
+        height: 105px;
+    }
+
+    .product_btns {
+        bottom: 90px;
+    }
+
+    .product_btns.down {
+        bottom: 110px;
+    }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+    .product_list .content, .product_btns .content, .download_wp .content {
+        transform: scale(0.7, 0.7);
+    }
+
+    .download_wp {
+        height: 98px;
+    }
+
+    .product_btns {
+        bottom: 82px;
+    }
+
+    .product_btns.down {
+        bottom: 102px;
+    }
+}

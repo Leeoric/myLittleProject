@@ -1,0 +1,446 @@
+
+body, html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    color: #fff;
+}
+
+.wrap {
+    height: 100%;
+    /*border: 5px solid #fff;*/
+    /*overflow: hidden;*/
+}
+
+/*header begin*/
+header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    /*background: #000;*/
+    /*border: 1px solid #fff;*/
+}
+
+nav {
+    height: 56px;
+    padding: 20px;
+    /*border: 1px solid #000;*/
+    background-color: transparent;
+}
+
+nav div {
+    float: left;
+    cursor: pointer;
+}
+
+nav ul {
+    float: right;
+    margin-right: 15px;
+}
+
+nav ul li {
+    float: left;
+    /*border: 1px solid #ff0;*/
+
+}
+
+nav a {
+    color: #fff;
+    text-align: center;
+    margin: 0 8px;
+    /*width: 64px;*/
+    height: 25px;
+    line-height: 25px;
+    padding: 6px;
+    display: inline-block;
+    background-color: transparent;
+
+}
+
+nav a:hover {
+    border-bottom: 2px solid #fff;
+}
+/*header end*/
+/*pagelist begin*/
+.pagelist {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    /*border: 1px solid transparent;*/
+}
+
+.txtbox {
+    position: absolute;
+    bottom: 22%;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font: lighter 12px/1.5 "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "微软雅黑", tahoma, arial, simsun, "宋体";
+    /*border: 1px solid #fff;*/
+}
+
+h2 {
+    /*border: 1px solid #fff;*/
+    text-align: center;
+    font-size: 36px;
+    font-weight: lighter;
+    line-height: 40px;
+    opacity: 0.8;
+}
+
+.paratext {
+    /*border: 1px solid #fff;*/
+    /*font-size: 14px;*/
+    /*line-height: 24px;*/
+    width: 800px;
+    margin: 10px auto 0;
+    font-weight: lighter;
+    text-align: left;
+    opacity: 0.8;
+
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    pointer-events: none;
+}
+
+/*pagelist end*/
+/*page begin*/
+/*page1 静态背景图开始*/
+.bg_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*background-position: center center;*/
+    /*background-repeat: no-repeat;*/
+}
+
+.bg_box img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/*page1 静态背景图结束*/
+/*page1 动态背景图旋转开始*/
+.pagelist #page1 .bgimg {
+    display: block;
+}
+
+#page1 .bgimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2500px;
+    height: 1600px;
+    margin: -800px 0 0 -1250px;
+    transform-origin: center 708px;
+    -webkit-transform-origin: center 708px;
+    display: none;
+}
+
+#page1 .bgimg {
+    animation: p1bg_effect1 300s both infinite linear;
+    -webkit-animation: p1bg_effect1 300s both infinite linear;
+}
+
+@keyframes p1bg_effect1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes p1bg_effect1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+#page1 .bgimg:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/ic_xnet9.jpg') no-repeat center center;
+    transform-origin: center 708px;
+    -webkit-transform-origin: center 708px;
+}
+
+#page1 .bgimg:before {
+    animation: p1bg_effect2 20s both linear;
+    -webkit-animation: p1bg_effect2 20s both linear;
+}
+
+@keyframes p1bg_effect2 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@-webkit-keyframes p1bg_effect2 {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.1);
+    }
+}
+
+/*page1 动态背景图旋转结束*/
+
+.pagebox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    /*left: -9999px;*/
+}
+
+.page1 {
+    height: 100%;
+    background: #000;
+    /*overflow: hidden;*/
+}
+
+.page2 {
+    height: 100%;
+    background: #000;
+    /*background-size: cover;*/
+    /*background: url(../images/page3_bg.jpg) no-repeat center center;*/
+}
+
+.page3 {
+    position: relative;
+    height: 100%;
+    background: #000;
+    background: url(../images/page3_bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.page3plan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1px;
+    height: 1px;
+    background: url(../images/star.png) no-repeat center center;
+    background-size: cover;
+}
+
+.page4 {
+    /*position: relative;*/
+    /*height: 100%;*/
+    /*background: #000;*/
+    /*background: url(../images/page3_bg.jpg) no-repeat center center;*/
+    /*background-size: cover;*/
+}
+
+#page4text {
+    display: none;
+}
+
+.light {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #fff;
+}
+
+.light span {
+    display: block;
+    width: 476px;
+    height: 72px;
+}
+
+/*黄流星---上*/
+.light1 {
+    position: absolute;
+    /*left: 550px;*/
+    top: 180px;
+    left: 2999px;
+    transform: scale(.8);
+    -webkit-transform: scale(.8);
+    background: url(../images/light_1.png) no-repeat center center;
+}
+
+/*黄流星---右*/
+.light2 {
+    position: absolute;
+    /*left: 740px;*/
+    left: 2999px;
+    top: 350px;
+    transform: scale(.8);
+    -webkit-transform: scale(.8);
+    background: url(../images/light_1.png) no-repeat center center;
+}
+
+/*黄流星---下*/
+.light3 {
+    position: absolute;
+    /*left: 460px;*/
+    left: 2999px;
+    top: 500px;
+    background: url(../images/light_1.png) no-repeat center center;
+}
+
+/*蓝流星*/
+.light4 {
+    position: absolute;
+    /*left: 320px;*/
+    left: 2999px;
+    top: 350px;
+    transform: scale(.8);
+    -webkit-transform: scale(.8);
+    background: url(../images/light_2.png) no-repeat center center;
+}
+
+/*闪亮*/
+.light .light5 {
+    /*display: none;*/
+    opacity: 0;
+    position: absolute;
+    left: -580px;
+    top: -150px;
+    width: 1920px;
+    height: 1080px;
+    margin-bottom: -523px;
+    transform: scale(.8);
+    -webkit-transform: scale(.8);
+    /*border: 1px solid #fff;*/
+    background: transparent url(../images/light_3.png) no-repeat center center;
+}
+
+/*斜向闪*/
+.light .lightbox {
+    display: block;
+    position: absolute;
+    left: -576px;
+    top: 401px;
+    /*left: 0;*/
+    /*top: 0;*/
+    width: 576px;
+    height: 401px;
+    background: url(../images/light_4.png) no-repeat center center;
+}
+
+/*page end*/
+
+.download {
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+    height: 70px;
+    /*border: 1px solid #000;*/
+}
+
+.download a:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    margin-left: -1px;
+    width: 200px;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 1);
+    opacity: 0;
+    z-index: -1;
+    /*结构加载时绕z逆时针旋转45度*/
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -40px, 0);
+    transform-origin: 0% 100%;
+}
+
+.download a {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 156px;
+    height: 40px;
+    line-height: 40px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+    /*background: #000;*/
+}
+
+.download a:hover {
+    color: #000;
+    opacity: .6;
+    width: 156px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: rotate3d(0, 0, 1, 0deg);
+    transition: all .3s;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/*右侧轮播按钮开始*/
+.sidebar {
+    position: absolute;
+    right: 3%;
+    top: 45%;
+    z-index: 9999;
+}
+
+.sidebar span {
+    /*border: 1px solid #000;*/
+    display: block;
+    width: 9px;
+    height: 9px;
+    margin: 10px;
+    background: transparent url(../images/btn_spr.png) no-repeat -14px -52px;
+    cursor: pointer;
+}
+
+.sidebar span:hover {
+    background-position: 0 -52px;
+}
+
+.sidebar .active {
+    background-position: 0px -52px;
+}
+
+/*右侧轮播按钮结束*/
+
+footer {
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    bottom: 5%;
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+}

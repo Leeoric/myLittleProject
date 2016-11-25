@@ -1,0 +1,53 @@
+/*Code Reset begin*/
+body {
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	font-size: 12px;
+	background: #fff;
+	min-width: 1024px;
+	-webkit-text-size-adjust: 100%;
+}
+
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select {
+	margin: 0;
+	padding: 0;
+} 
+
+footer, header {
+	z-index: 99
+}
+
+a {
+	font-size: 16px;
+	color:#2d374b;
+	text-decoration:none;
+	outline: 0;
+} 
+
+a:hover {
+	/*color:#cd0200;*/
+	text-decoration:none;
+	outline: 0;
+} 
+
+em, i {
+	font-style: normal
+}
+
+li {
+	list-style:none;
+} 
+
+img {
+	border:0;
+	vertical-align:middle;
+} 
+
+table {
+	border-collapse:collapse;	/*清除表格单元格之间的间隙*/
+	border-spacing:0;
+} 
+
+p {
+	word-wrap:break-word;	/*强制换行，兼容到IE6+*/
+} 
+/* Code Reset end*/
