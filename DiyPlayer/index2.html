@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放器</title>
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/player.css">
+</head>
+<body>
+<figure>
+    <figcaption>视频播放器</figcaption>
+    <div class="player">
+        <video src="./video/fun.mp4"></video>
+        <div class="controls">
+            <!-- 播放/暂停 -->
+            <a href="javascript:;" class="switch fa fa-play"></a>
+            <!-- 全屏 -->
+            <a href="javascript:;" class="expand fa fa-expand"></a>
+            <!-- 进度条 -->
+            <div class="progress">
+                <div class="loaded"></div>
+                <div class="line"></div>
+                <div class="bar"></div>
+            </div>
+            <!-- 时间 -->
+            <div class="timer">
+                <span class="current">00:00:00</span> /
+                <span class="total">00:00:00</span>
+            </div>
+            <!-- 声音 -->
+        </div>
+    </div>
+</figure>
+
+<script>
+    /*
+     * 思路导航
+     * 1. 当视屏文件符合规定，我们把承载video的盒子显示 -->> canplay()事件（监听视频可以播放）
+     * 2. 点击左侧播放按钮进行播放或者暂停，并且改变样式 -->> clicl()事件（ClassList.add） play()播放 pause()暂停  paused 属性
+     * 3. 让视频的总时间显示在规定的位置。-->> video.duration（单位是秒）
+     * 4. 在视频播放过程中规定位置的时间随时改变 -->> video.currentTime（单位是秒） ontimeupdate()事件  是播放位置改变的时候触发
+     * 5. 播放过程中进度条随时间的变化而改变 -->> (currentTime/duration)*100+%
+     * 6. 点击进度条的位置进行跳播 -->> video.currentTime赋值就行
+     * 7. 点击全屏按钮是进行全屏播放 -->> fullScreen
+     * 8. 当视屏播放完以后 播放按钮还原，进度条还原，进度时间还原 -->> onended()事件（监听视频播放完毕）
+     * */
+
+    var video = document.querySelector("video"),
+            play = document.querySelector(".switch"),
+            total = document.querySelector(".total"),
+            expand = document.querySelector(".expand"),
+            current = document.querySelector(".current"),
+            line = document.querySelector(".line"),
+            bar = document.querySelector(".bar"),
+            time, h, m, s;
+    video.oncanplay = function () {
+        video.style.display = "block";
+        time = video.duration;
+        h = Math.floor(time / 3600);
+        m = Math.floor(time / 60);
+        s = Math.floor(time % 60);
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        total.innerHTML = h + ":" + m + ":" + s;
+    };
+    play.onclick = function () {
+        this.classList.toggle("fa-pause");
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    };
+    video.ontimeupdate = function () {
+        time = video.currentTime;
+        h = Math.floor(time / 3600);
+        m = Math.floor(time / 60);
+        s = Math.floor(time % 60);
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        current.innerHTML = h + ":" + m + ":" + s;
+        var curT = (time / video.duration) * 100 + "%";
+        line.style.width = curT;
+    };
+    bar.onclick = function (ev) {
+        var a = ev.offsetX,
+                b = parseFloat(window.getComputedStyle(this).width);
+        video.currentTime = video.duration * (a / b);
+    };
+    expand.onclick = function () {
+        this.webkitRequestFullScreen();
+    };
+    video.onended = function () {
+        play.classList.remove("fa-pause");
+        video.currentTime = 0;
+    };
+</script>
+</body>
+</html>

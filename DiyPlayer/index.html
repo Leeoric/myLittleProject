@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>自定义播放器</title>
+    <style type="text/css">
+        .wrap {
+            width: 680px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #5a5b5c;
+        }
+
+        .video {
+            text-align: center;
+            background-color: #000;
+        }
+
+        .video video {
+            display: none;
+        }
+
+        .diy {
+            width: 100%;
+            height: 42px;
+            /*line-height: 40px;*/
+            text-align: center;
+            /*线性渐变样式，CSS3，兼容IE10+，firefox19+，chrome26+，opera12.1+，safari5.1+*/
+            background-image: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(230, 232, 234, 1) 50%, rgba(191, 195, 200, 1) 100%);
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(230, 232, 234, 1) 50%, rgba(191, 195, 200, 1) 100%);
+            /*background-color: #000;*/
+        }
+
+        .diy span {
+            display: inline-block;
+            height: 24px;
+            line-height: 24px;
+            margin-top: 8px;
+            vertical-align: middle;
+            font-family: "微软雅黑";
+            /*border: 1px solid #000;*/
+        }
+
+        .play {
+            width: 32px;
+            height: 24px;
+            cursor: pointer;
+            background: url(btn.png) no-repeat 0 0;
+        }
+
+        .pause {
+            width: 32px;
+            height: 24px;
+            cursor: pointer;
+            background: url(btn.png) no-repeat -34px 0;
+        }
+        /*进度条B*/
+        #progress {
+            position: relative;
+            width: 400px;
+        }
+
+        i {
+            display: inline-block;
+            position: absolute;
+            left: 3px;
+            top: 7px;
+            width: 390px;
+            height: 10px;
+            font-style: normal;
+            border-radius: 3px;
+        }
+
+        #loaded {
+            /*background-color: #ccc;*/
+            border:1px solid transparent;
+        }
+
+        #line {
+            background-color: #646464;
+            border:1px solid transparent;
+        }
+
+        #bar {
+            cursor: pointer;
+            border:1px solid #424242;
+            /*background-color: #535a66;*/
+        }
+
+        /*进度条E*/
+        #curTime {
+            width: 70px;
+        }
+
+        #totalTime {
+            width: 70px;
+        }
+
+        #fullScreen {
+            width: 32px;
+            height: 24px;
+            cursor: pointer;
+            background: url(btn.png) no-repeat 0 -26px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="video">
+        <video src="chrome.mp4" width="100%"></video>
+    </div>
+    <div class="diy">
+        <span id="play" class="play"></span>
+        <span id="progress">
+			<i id="loaded"></i>
+			<i id="line"></i>
+			<i id="bar"></i>
+		</span>
+        <span id="curTime">00:00:00</span>
+        <span>/</span>
+        <span id="totalTime">00:00:00</span>
+        <span id="fullScreen"></span>
+    </div>
+</div>
+<script type="text/javascript">
+    //对不起，$符号我占用了
+    function $(elem) {
+        return document.querySelector(elem);
+    }
+    //传入一个视频的总长度，用这个函数返回一个字符串，格式为 00:00:00
+    function calcTime(time) {
+        var h = Math.floor(time / 3600);
+        var m = Math.floor(time / 60 % 60);
+        var s = Math.floor(time % 60);
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        var a = h + ":" + m + ":" + s;
+        // console.log(a);
+        return a;
+    }
+    // 1. 当视屏文件符合规定，我们把承载video的盒子显示 -->> canplay()事件（监听视频可以播放）
+    var video = $("video");
+    var totalTime = $("#totalTime");
+    var curTime = $("#curTime");
+    var bar = $("#bar");
+    //oncanplay 事件在用户可以开始播放视频/音频（audio/video）时触发。
+    video.oncanplay = function () {
+        //视频准备好后，显示视频，显示视频总时间长度
+        video.style.display = "block";
+        //duration属性：返回当前音频/视频的长度（以秒计）
+        var duration = video.duration;
+        //改变进度条总长度处的内容
+        totalTime.innerText = calcTime(duration);
+    };
+    // 2. 点击左侧播放按钮进行播放或者暂停，并且改变样式
+    play.onclick=function () {
+        //classList 属性返回元素的类名
+        this.classList.toggle("pause");
+        //paused属性:检查视频是否已暂停
+        if (video.paused) {
+            //play()，播放
+            video.play();
+        } else {
+            //pause()，暂停
+            video.pause();
+        }
+    };
+    // 3. 让视频的总时间显示在规定的位置。-->> video.duration（单位是秒）
+    //------------------------------------------------------------------
+    //ontimeupdate 事件在视频/音频（audio/video）当前的播放位置发生改变时触发。
+    //该事件通过以下方式调用：
+    //播放视频/音频（audio/video）
+    //重新定位视频/音频（audio/video）的播放位置。
+    //提示： 该事件通常与 Video 对象的 currentTime 属性一起使用， 该属性返回视频/音频（audio/video）的当前播放位置。
+    //------------------------------------------------------------------
+    video.ontimeupdate=function () {
+        //currentTime属性设置或返回视频播放的当前位置（以秒计）。
+        //当设置该属性时，播放会跳跃到指定的位置。
+        // 4. 播放位置改变时，改变当前时间显示
+        curTime.innerText = calcTime(video.currentTime);
+        // 5. 播放过程中进度条随时间的变化而改变
+        line.style.width = video.currentTime / video.duration * 100 + "%";
+    };
+    // 6. 点击进度条的位置进行跳播,并且进度条宽度随之变化
+
+    bar.onclick = function (ev) {
+//        console.log(ev);
+        var offset = ev.offsetX;
+        // 计算跳播进度面分比
+        var currentPercent = offset / parseFloat(getComputedStyle(bar).width);
+//        console.log(currentPercent);
+        // 百分比 * 总时长 = 当前时间（以秒计）
+        var currentTime = currentPercent * video.duration;
+        console.log(Math.ceil(currentTime));
+        // 设置跳播时间
+        video.currentTime = currentTime;
+        console.log(video.currentTime);
+    };
+    // 7. 点击全屏按钮是进行全屏播放 -->> fullScreen
+    var fullScreen = $("#fullScreen");
+    fullScreen.addEventListener("click", function () {
+        video.webkitRequestFullScreen();
+    });
+    // 8. 当视屏播放完以后 播放按钮还原，进度条还原，进度时间还原
+    //onended 事件在视频/音频（audio/video）播放结束时触发。
+    //该事件通常用于送类似"感谢观看"之类的消息。
+    video.addEventListener("ended", function () {
+        play.classList.remove("pause");
+        video.currentTime = 0;
+    });
+
+</script>
+</body>
+</html>
