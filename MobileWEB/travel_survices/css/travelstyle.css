@@ -1,0 +1,160 @@
+
+/*-------------------------出行旅游页开始-------------------------*/
+/*nav B*/
+.travel_nav {
+	width: 100%;
+	height: 0.933333rem;
+	background-color: #e8e8e8;
+}
+
+.travel_nav ul {
+	/*去除inline-block的4px间隙*/
+	font-size: 0;
+	text-align: center;
+}
+
+.travel_nav ul li {
+	display: inline-block;
+	width: 25%;
+	/*父元素设置了大小为0，此处重新设置字体大小*/
+	font-size: 0.4rem;
+	line-height: 0.933333rem;
+	/*border: 1px solid #000;*/
+}
+
+.travel_nav ul a {
+	display: inline-block;
+	width: 100%;
+}
+/*nav E*/
+/*travle_banner B*/
+/*轮播图*/
+.travel_banner{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.travel_banner ul:nth-child(1){
+	/*这个时候我们需要放下10张图片  我们宽度就要是父容器宽度的10倍*/
+	width: 1000%;
+	-webkit-transform:translateX(-10%);
+	transform: translateX(-10%);
+}
+.travel_banner ul:nth-child(1) li{
+	width: 10%;
+	float: left;
+}
+.travel_banner ul:nth-child(1) li a{
+	width: 100%;
+	display: block;
+}
+.travel_banner ul:nth-child(1) li a img{
+	width: 100%;
+	display: block;/*清除间距*/
+}
+.travel_banner ul:nth-child(2){
+	position: absolute;
+	/*绝对定位的盒子居中 left 50% maegin-left 一半的宽度 而且是负的*/
+	width: 118px;
+	height: 6px;
+	left: 50%;
+	bottom: 5px;
+	margin-left: -59px;
+}
+.travel_banner ul:nth-child(2) li{
+	float: left;
+	width: 6px;
+	height: 6px;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	margin-left: 10px;
+}
+.travel_banner ul:nth-child(2) li.now{
+	background: #fff;
+}
+.travel_banner ul:nth-child(2) li:first-child{
+	margin-left: 0;
+}
+/*travle_banner E*/
+/*travel_product B*/
+.travel_product {
+	background-color: #e8e8e8;
+}
+
+.travel_product .items {
+	width: 100%;
+	height: 3.6rem;
+	text-align: center;
+	margin-top: 0.266667rem;
+	background-color: #fff;
+}
+
+.travel_product .itemsleft {
+	width: 24%;
+	height: 3.6rem;
+	padding: 1.2rem 0.666667rem;
+	border-right: 1px solid #ccc;
+	font-size: 0.426667rem;
+	background-color: #fff;
+}
+
+.travel_product .itemsright {
+	display:table;
+	width: 76%;
+	height: 3.6rem;
+	text-align: center;
+}
+/*css table布局，垂直居中！适配各种尺寸屏幕*/
+.travel_product .itemsright .itemsr1 {
+	display:table-cell;
+	vertical-align:middle;
+	text-align: center;
+	width: 1.973333rem;
+	height: 2.573333rem;
+}
+
+/*伪元素居中法！*/
+/*.itemsr1:before {
+	content:'';
+	display:inline-block;
+	vertical-align:middle;
+	height:100%;
+}*/
+
+.itemsr1 .right_up {
+	display: inline-block;
+	width: 152px;
+	height: 152px;
+}
+/*精灵图*/
+.sp1 {
+	background: url(../images/sprite.png) no-repeat;
+	background-position: 0 -812px;
+}
+
+.sp2 {
+	background: url(../images/sprite.png) no-repeat;
+	background-position: 0 -978px;
+}
+
+.sp3 {
+	background: url(../images/sprite.png) no-repeat;
+	background-position: 0 -166px;
+}
+
+.sp4 {
+	background: url(../images/sprite.png) no-repeat;
+	background-position: 0 -328px;
+}
+
+.sp5 {
+	background: url(../images/sprite.png) no-repeat;
+	background-position: 0 -490px;
+}
+
+.sp6 {
+	background: url(../images/sprite.png) no-repeat;
+	background-position: 0 -655px;
+}
+/*travel_product E*/
+/*-------------------------出行旅游页结束-------------------------*/

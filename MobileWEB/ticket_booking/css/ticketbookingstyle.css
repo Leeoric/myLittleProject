@@ -1,0 +1,223 @@
+.travel_layout {
+	background-color: #c8c8c8;
+}
+/*header B*/
+.travel_title i {
+	width: 34px;
+	height: 31px;
+	vertical-align: middle;
+}
+
+.travel_title .like {
+	position: absolute;
+	right: 50px;
+	top: 0;
+}
+
+.travel_title .share {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.like i {
+	background: url(../images/sprite.png) no-repeat 0 0;
+}
+
+.share i {
+	background: url(../images/sprite.png) no-repeat 0 -30px;
+}
+/*header E*/
+/*景区介绍 B*/
+article {
+	margin: 0.4rem;
+	padding: 0.24rem 0.24rem 0 0.24rem;
+	background-color: #fff;
+}
+
+.article-top {
+	width: 100%;
+	border-bottom: 1px solid #000;
+}
+
+.intro {
+	display: inline-block;
+	width: 58%;
+}
+
+.photo {
+	width: 40%;
+	
+}
+.photo span {
+	display: inline-block;
+	width: 3.466667rem;
+	height: 4.053333rem;
+	background: url(../images/photo.png) no-repeat  -100px -3px;
+}
+.intro-text {
+	border-bottom: 1px solid #000;
+}
+
+.intro-text  p {
+	margin: 0.346667rem 0;
+	font-size: 0.346667rem;
+	color: #777777;
+}
+
+.intro-rank {
+	width: 100%;
+	height: 1.333333rem;
+	padding: 0.4rem 0;
+	line-height: 1.333333rem;
+	font-size: 0.293333rem;
+	color: #999999;
+}
+
+.intro-rank span {
+	display: inline-block;
+}
+
+.intro-rank span:first-child::before {
+	content: " ";
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url(../images/sprite.png) no-repeat -109px 0;
+}
+
+.intro-rank span:last-child::before {
+	content: " ";
+	display: inline-block;
+	width: 45px;
+	height: 40px;
+	background: url(../images/sprite.png) no-repeat 0px -112px;
+}
+
+.article-bottom {
+	width: 100%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: 0.293333rem;
+	color: #999999;
+}
+
+.article-bottom p::before {
+	content: " ";
+	display: inline-block;
+	width: 35px;
+	height: 43px;
+	vertical-align: middle;
+	background: url(../images/sprite.png) no-repeat -60px 0px;
+}
+/*景区介绍 E*/
+/*门票B*/
+.ticket {
+	margin: 0.4rem;
+	/*padding: 0.24rem 0.24rem 0 0.24rem;*/
+}
+
+.ticket_title {
+	width: 100%;
+	height: 0.666667rem;
+	line-height: 0.666667rem;
+	padding-left: 0.24rem;
+	background-color: #4dbaff;
+}
+
+.ticket_title p {
+	font-size: 0.373333rem;
+	color: #fff;
+}
+
+.ticket_price {
+	margin-top: 0.266667rem;
+	background-color: #f4f4f4;
+	border: 1px solid transparent;
+	border-radius: 15px;
+}
+
+.ticket_name {
+	padding-left: 0.24rem;
+	width: 100%;
+	height: 1.0rem;
+	line-height: 1rem;
+	font-size: 0.346667rem;
+	border-bottom: 1px solid #000;
+}
+
+.ticket_name p::before {
+	content: " ";
+	display: inline-block;
+	width: 50px;
+	height: 35px;
+	vertical-align: middle;
+	background: url(../images/sprite.png) no-repeat 0px -65px;
+}
+
+.ticket_details {
+	width: 100%;
+	padding: 0.24rem;
+	/*border: 1px solid #000;*/
+}
+
+.ticket_details .details-left {
+	position: relative;
+	width: 57%;
+	height: 2.24rem;
+}
+.ticket_details .details-left p {
+	line-height: 0.533333rem;
+	font-size: 0.293333rem;
+	color: #777777;
+}
+.ticket_details .details-left p:first-child {
+	font-size: 0.346667rem;
+}
+.ticket_details .details-left p:nth-child(2) span::before {
+	content: " ";
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+	background: url(../images/sprite.png) no-repeat -163px 0px;
+}
+.ticket_details .details-left p:last-child {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.ticket_details .details-left p:last-child span {
+	letter-spacing: -5px;
+}
+.details-right {
+	width: 27%;
+	padding-right: 0.293333rem;
+}
+.details-right p {
+	text-align: center;
+}
+.details-right p:first-child {
+	line-height: 0.4rem;
+	text-decoration: line-through;
+	font-size: 0.293333rem;
+	color: #777777;
+}
+.details-right p:nth-child(2) {
+	line-height: 0.533333rem;
+	font-size: 0.346667rem;
+	color: #777777;
+}
+.details-right p:nth-child(3) {
+	line-height: 0.533333rem;
+	font-size: 0.293333rem;
+	color: #777777;
+	background-color: #ddd;
+}
+.details-right p:last-child {
+	line-height: 0.8rem;
+	font-size: 0.346667rem;
+	color: #fff;
+	background-color: #3c78db;
+}
+/*门票E*/
