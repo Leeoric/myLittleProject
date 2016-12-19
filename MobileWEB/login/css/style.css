@@ -1,0 +1,115 @@
+.login-top {
+	position: relative;
+	width: 100%;
+	height: 8.666667rem;
+	/*border: 1px solid #000;*/
+}
+
+.login-top div img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 2.546667rem;
+	height: 2.546667rem;
+}
+
+.login-bottom {
+	width: 100%;
+	height: 8.666667rem;
+	margin-top: 1rem;
+	/*border: 1px solid #000;*/
+}
+
+.formwrap {
+	width: 58.4%;
+	margin: 0 auto;
+	/*border: 1px solid #000;*/
+}
+
+.formwrap input {
+	width: 100%;
+	height: 1.133333rem;
+	margin-top: 0.226667rem;
+	border: 2px solid #427cdb;
+	border-radius: 20px;
+	background: transparent;
+	font: 0.426667rem "微软雅黑";
+}
+
+.user input,
+.psw input {
+	padding-left: 1.0rem;
+}
+
+.user input {
+	background: url(../images/4.png) no-repeat 0.266667rem 0.266667rem;
+	background-size: 0.426667rem 1.84rem;
+}
+
+.psw input {
+	background: url(../images/4.png) no-repeat 0.266667rem -1.04rem;
+	background-size: 0.426667rem 1.84rem;
+}
+
+.login input {
+	border: 1px solid #000;
+	color: #fff;
+	background-image: -webkit-linear-gradient(to bottom, rgba(103,163,255,1) 0%, rgba(45,117,222,1) 100%);
+	background-image: linear-gradient(to bottom, rgba(103,163,255,1) 0%, rgba(45,117,222,1) 100%);
+}
+
+.forgot {
+	margin-top: 0.226667rem;
+	font-size: 0.346667rem;
+	color: #999999;
+}
+
+.forgot span {
+	display: inline-block;
+	padding: 0 0.2rem;
+}
+
+.other {
+	margin-top: 0.226667rem;
+	text-align: center;
+}
+
+.other span {
+	display: inline-block;
+	font-size: 0.373333rem;
+	color: #969696; 
+	text-align: center;
+}
+
+.other span::before {
+	content: "——— ";
+	display: inline-block;
+	color: #4dbaff;
+}
+.other span::after {
+	content: " ———";
+	display: inline-block;
+	color: #4dbaff;
+}
+
+.friend {
+	text-align: center;
+	/*border: 1px solid #000;*/
+	margin-top: 0.226667rem;
+	width: 100%;
+	height: 0.813333rem;
+	background: url(../images/2.png) no-repeat center;
+	background-size: 4.92rem 0.813333rem;
+}
+
+.friend a {
+	display: inline-block;
+	width: 21%;
+	height: 100%;
+	/*background-color: red;*/
+	/*opacity: 0.5;*/
+}
+
